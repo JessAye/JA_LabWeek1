@@ -1,0 +1,26 @@
+﻿@model JA_LabWeek1.Models.Student
+
+@{
+    ViewData["Title"] = "StudentDetails";
+    Layout = "_layout";
+    var Student = ViewData.Model;
+    string name = Student.name;
+    LetterGrade grade = Student.grade;
+}
+
+<h1>StudentDetails</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    
+    <dl class="row">
+        <dr><h2>Name: </h2>@name</dr>
+            <dr><h2>Grade:  </h2>@grade</dr>
+       
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
